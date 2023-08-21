@@ -1,8 +1,9 @@
+import br.com.disneybank.bank.Bank;
 import br.com.disneybank.clients.Employee;
 
 public class Main {
     public static void main(String[] args) {
-       Bank disneyBank = new Bank();
+       Bank disneyBank = new Bank("DisneyBank");
        Employee employee = new Employee();
 
        employee.setName("João Santos");
@@ -13,7 +14,7 @@ public class Main {
        employee.setPosition("gerente");
        employee.setSector("Contabilidade");
 
-        System.out.println("nome do banco: " + disneyBank.getBankName() + "");
+        System.out.println("nome do banco: " + disneyBank.getBankName());
 
         System.out.println("nome do cliente " + employee.getName() + ": " + employee.getName());
         System.out.println("Cpf do cliente " + employee.getName() + ": " + employee.getCpfCnpj());
