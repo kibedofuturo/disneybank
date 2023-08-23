@@ -7,5 +7,6 @@ public class Card {
     private String securityCode;
     private Date expirationDate;
     private char cardModality;
+    private boolean cardType;
 
 }

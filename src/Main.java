@@ -1,8 +1,13 @@
 import br.com.disneybank.bank.Bank;
+import br.com.disneybank.bank.Branch;
+import br.com.disneybank.clients.Client;
 import br.com.disneybank.clients.Employee;
+
+import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
+       /*
        Bank disneyBank = new Bank("DisneyBank");
        Employee employee = new Employee();
 
@@ -23,6 +28,15 @@ public class Main {
 
         System.out.println("O cliente " + employee.getName() + " trabalha no setor de " + employee.getSector().toLowerCase() +
                 " e tem o cargo de " + employee.getPosition().toLowerCase() + "\n");
+        */
 
+        Bank bank = new Bank("DisneyBank");
+
+        System.out.println("O nome do banco é: " + bank.getBankName());
+
+        Branch disneyBranch = new Branch("DisneyBranch", "1234");
+
+        bank.addBranch(disneyBranch);
+        bank.getBranches();
     }
 }
