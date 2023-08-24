@@ -1,11 +1,21 @@
 package br.com.disneybank.clients;
 
+import br.com.disneybank.account.Account;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Client {
     private String name;
     private String cpfCnpj;
     private String rg;
     private String email;
     private  String phoneNumber;
+    private List<Account> account;
+
+    public Client() {
+        account = new ArrayList<>();
+    }
 
     public String getName() {
         return name;

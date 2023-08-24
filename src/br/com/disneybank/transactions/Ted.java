@@ -1,4 +1,4 @@
-package br.com.disneybank.trantransactions;
+package br.com.disneybank.transactions;
 
 import br.com.disneybank.account.Account;
 import br.com.disneybank.bank.Branch;

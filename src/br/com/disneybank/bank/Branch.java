@@ -12,11 +12,8 @@ public class Branch {
         this.branchNumber = branchNumber;
     }
 
-    public String getBranchName() {
-        return branchName;
-    }
-
-    public String getBranchNumber() {
-        return branchNumber;
+    @Override
+    public String toString() {
+        return "Nome da agência: " + branchName + "\nNúmero da branch: " + branchNumber;
     }
 }

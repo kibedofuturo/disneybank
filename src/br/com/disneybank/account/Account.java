@@ -5,5 +5,11 @@ public class Account {
     private char accountType;
     private double balance;
     private double overdraft;
-    private double integratedSavings;
+
+    public Account(String accountNumber, char accountType, double balance, double overdraft) {
+        this.accountNumber = accountNumber;
+        this.accountType = accountType;
+        this.balance = balance;
+        this.overdraft = overdraft;
+    }
 }

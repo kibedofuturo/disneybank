@@ -1,4 +1,4 @@
-package br.com.disneybank.trantransactions;
+package br.com.disneybank.transactions;
 
 import java.time.LocalDateTime;
 
