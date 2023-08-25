@@ -19,10 +19,6 @@ public class Bank {
         return bankName;
     }
 
-    public List<Branch> getBranches() {
-        return branches;
-    }
-
     public void printBranches() {
         for (Branch branch : branches) {
             System.out.println(branch.toString());

@@ -14,6 +14,6 @@ public class Branch {
 
     @Override
     public String toString() {
-        return "Nome da agência: " + branchName + "\nNúmero da branch: " + branchNumber;
+        return "Nome da agência: " + branchName + "\nNúmero da agência "+ branchName + ": " + branchNumber + "\n";
     }
 }

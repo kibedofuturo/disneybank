@@ -13,4 +13,8 @@ public class Doc implements Transaction {
     private Branch branch;
     private LocalDateTime date;
 
+    @Override
+    public void performTransaction() {
+        Transaction.super.performTransaction();
+    }
 }

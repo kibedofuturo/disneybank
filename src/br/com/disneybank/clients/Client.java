@@ -11,49 +11,39 @@ public class Client {
     private String rg;
     private String email;
     private  String phoneNumber;
-    private List<Account> account;
+    private List<Account> accounts;
 
     public Client() {
-        account = new ArrayList<>();
-    }
-
-    public String getName() {
-        return name;
+        accounts = new ArrayList<>();
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public String getCpfCnpj() {
-        return cpfCnpj;
-    }
-
     public void setCpfCnpj(String cpfCnpj) {
         this.cpfCnpj = cpfCnpj;
-    }
-
-    public String getRg() {
-        return rg;
     }
 
     public void setRg(String rg) {
         this.rg = rg;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public void addAccount(Account account) {
+        accounts.add(account);
+    }
+
+    public void printAccounts() {
+        for (Account account : accounts) {
+            System.out.println("O dono da conta é: " + name + "\n" + account.toString());
+        }
     }
 }
