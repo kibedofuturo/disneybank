@@ -10,31 +10,25 @@ public class Client {
     private String cpfCnpj;
     private String rg;
     private String email;
-    private  String phoneNumber;
+    private String phoneNumber;
     private List<Account> accounts;
 
-    public Client() {
+    public Client(String name, String cpfCnpj, String rg, String email, String phoneNumber) {
+        this.name = name;
+        this.cpfCnpj = cpfCnpj;
+        this.rg = rg;
+        this.email = email;
+        this.phoneNumber = phoneNumber;
         accounts = new ArrayList<>();
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setCpfCnpj(String cpfCnpj) {
-        this.cpfCnpj = cpfCnpj;
-    }
-
-    public void setRg(String rg) {
-        this.rg = rg;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public Account getClientAccount(String accountNumber) {
+        for (Account account : accounts) {
+            if (account.getAccountNumber().equals(accountNumber)) {
+                return account;
+            }
+        }
+        return null;
     }
 
     public void addAccount(Account account) {
@@ -43,7 +37,21 @@ public class Client {
 
     public void printAccounts() {
         for (Account account : accounts) {
-            System.out.println("O dono da conta é: " + name + "\n" + account.toString());
+            System.out.println("O dono da conta é: " + name + "\n" + account);
+        }
+    }
+
+    public void performTransaction(String senderAccountNumber, Client receiver, String receiverAccountNumber, double value) {
+        Account senderAccount = getClientAccount(senderAccountNumber);
+        Account receiverAccount = receiver.getClientAccount(receiverAccountNumber);
+
+        if (senderAccount != null && receiverAccount != null && senderAccount.getBalance() >= value) {
+            senderAccount.withdraw(value);
+            receiverAccount.deposit(value);
+            System.out.println("Transação realizada com sucesso.");
+            System.out.println("Novo saldo: " + senderAccount.getBalance() + "\n");
+        } else {
+            System.out.println("Transação falhou. Verifique os detalhes da transação e os saldos das contas.\n");
         }
     }
 }

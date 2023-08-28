@@ -6,9 +6,9 @@ public class Bank {
     private String bankName;
     private List<Branch> branches;
 
-    public Bank(String bankName) {
+    public Bank(String bankName, List<Branch> branches) {
         this.bankName = bankName;
-        this.branches = new ArrayList<>();
+        this.branches = branches;
     }
 
     public void addBranch(Branch branch) {

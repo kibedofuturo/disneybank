@@ -13,6 +13,14 @@ public class Account {
         this.overdraft = overdraft;
     }
 
+    public String getAccountNumber() {
+        return accountNumber;
+    }
+
+    public double getBalance() {
+        return balance;
+    }
+
     public String getAccountType() {
         if (accountType == 'p' || accountType == 'P') {
             return "Poupança";
@@ -23,6 +31,22 @@ public class Account {
         }
         else {
             return null;
+        }
+    }
+
+    public void withdraw(double value) {
+        if (value > 0 && balance >= value) {
+            balance -= value;
+        } else {
+            System.out.println("Saque falhou. Verifique o valor do saque e o saldo da conta.");
+        }
+    }
+
+    public void deposit(double value) {
+        if (value > 0) {
+            balance += value;
+        } else {
+            System.out.println("Depósito falhou. Verifique o valor do depósito.");
         }
     }
 
